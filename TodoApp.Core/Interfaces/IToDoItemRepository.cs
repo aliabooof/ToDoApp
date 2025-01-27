@@ -9,10 +9,10 @@ namespace TodoApp.Core.Interfaces
 {
     public interface IToDoItemRepository
     {
-        Task<ToDoItem> GetByIdAsync(int id);
+        Task<ToDoItem?> GetByIdAsync(int id);
         Task<IEnumerable<ToDoItem>> GetAllAsync();
-        Task Add(ToDoItem toDoItem);
-        Task Update(int id);
-        Task Delete(int id);
+        Task AddAsync(ToDoItem toDoItem);
+        Task UpdateAsync(int id);
+        Task DeleteAsync(int id);
     }
 }

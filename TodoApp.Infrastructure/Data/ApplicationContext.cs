@@ -9,13 +9,14 @@ using TodoApp.Core.Entites;
 
 namespace TodoApp.Infrastructure.Data
 {
-    internal class AppDbContext : DbContext
+    public class ApplicationContext : DbContext
     {
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) { }
         public DbSet<ToDoItem> toDoItems { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }

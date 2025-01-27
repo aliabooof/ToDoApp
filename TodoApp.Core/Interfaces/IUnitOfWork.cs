@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace TodoApp.Core.Interfaces
 {
-    internal interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
+        IToDoItemRepository ItemRepository { get; }
+        Task<int> CommitAsync();
     }
 }
