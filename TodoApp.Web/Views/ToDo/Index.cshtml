@@ -1,0 +1,30 @@
+﻿@model List<ToDoViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Todo List</h1>
+<p><a asp-action="Create">Create New</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@(item.IsCompleted ? "✅ Completed" : "🕒 Pending")</td>
+            </tr>
+        }
+        </tbody>
+
+<</table>

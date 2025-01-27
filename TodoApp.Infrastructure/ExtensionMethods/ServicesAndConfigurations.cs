@@ -21,6 +21,7 @@ namespace TodoApp.Infrastructure.ExtensionMethods
 
             services.AddScoped<IToDoItemRepository, ToDoItemRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            
 
             return services;
         }

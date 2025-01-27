@@ -10,9 +10,6 @@ namespace TodoApp.Infrastructure.Data
     internal class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationContext _context;
-
-       
-
         public IToDoItemRepository ItemRepository { get; }
 
         public UnitOfWork(ApplicationContext context , IToDoItemRepository itemRepository)
